@@ -8,24 +8,30 @@
 </head>
 <body>
     <header id="top-bar">
-        <div>
+        <article id="intro">
             <h1>Ola Mundo!!</h1>
             <p>Me chamo Hevellyn, R.A: 14505.
                 <br>Essas são as atividades propostas pelo
                 <br>
                 <strong>Prof: Aleandro</strong>
             </p>
-        </div>
+        </article>
         <nav>
             <h4>Atividades</h4>
             <ul>
                 <li><a href="#atv01_02">01|02</a></li>
                 <li><a href="#atv03_04">03|04</a></li>
                 <li><a href="#atv05_06">05|06</a></li>
-                <li><a href="">07|08</a></li>
-                <li><a href="">09|10</a></li>
-                <li><a href="">11|12</a></li>
-                <li><a href="">13|14</a></li>
+                <li><a href="#atv07_08">07|08</a></li>
+                <li><a href="#atv09_10">09|10</a></li>
+               
+            </ul>
+            <ul>
+                <li><a href="#atv11_12">11|12</a></li>
+                <li><a href="#atv13_14">13|14</a></li>
+                <li><a href="#atv15_16">15|16</a></li>
+                <li><a href="#atv17_18">17|18</a></li>
+                <li><a href="#atv19_20">19|20</a></li>
             </ul>
         </nav>
     </header>
@@ -149,23 +155,313 @@
                 <label for="temperature">Digite a temperatura:</label>
                 <input type="number" id="temperature" required>
                 <br>
-                <button type="button" onclick="convertTemp()">Converter</button>
+                <button type="button" onclick="convertTemp(event)">Converter</button>
+                <p id="convert-res"></p>
             </form>
-            <p id="resultado"></p>
             <form>
                 <h3>Validação de login</h3>
-                <label for="">Valor Do Produto?</label>
-                <input step="0.01" class="valueProduct" type="number" placeholder="Valor Do Produto?">
-                <label for="">Desconto Aplicado em %?</label>
-                <input step="0.01" class="desc" type="number" placeholder="Desconto Aplicado em %?">
-                <p class="value">Aqui aparece o valor com desconto</p>
-                <button onclick="calculateDesc(event)">Calcular Desconto</button>
+                <label for="">Nome</label>
+                <input id="nameLogin" type="text" placeholder="Nome">
+                <label for="">Senha</label>
+                <input id="passwordLogin" type="password" placeholder="Senha">
+                <p id="validated"></p>
+                <button onclick="handleSummitLogin(event)">Submmit</button>
+            </form>
+        </section>
+        <section id="atv09_10">
+            <header>
+                <h2>Atividades 09 e 10</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_09 - Determinar a estação do ano: </strong> Pergunte ao usuário em que mês ele está e determine a estação do ano (primavera,
+                    verão, outono ou inverno). <br>
+                    Fórmula: Nenhuma fórmula necessária. Use uma estrutura condicional para associar os meses às estações.
+                </p>
+                <ul>
+                    <h6>Classificação:</h6>
+                    <li>Primavera: de março a maio</li>
+                    <li>Verão: de junho a agosto</li>
+                    <li>Outono: de setembro a novembro</li>
+                    <li>Inverno: de dezembro a fevereiro</li>
+                </ul>
+                <p>
+                    <strong>Atv_10 - Classificação de triângulos: </strong> Solicite ao usuário o tamanho de três lados de um triângulo e determine se ele é
+                    equilátero, isósceles ou escaleno. <br>
+                    Fórmula: Nenhuma fórmula necessária. Compare os lados do triângulo para determinar sua classificação.
+                </p>
+                <ul>
+                    <h6>Classificação:</h6>
+                    <li>Equilátero: Todos os três lados têm o mesmo comprimento</li>
+                    <li>Escaleno: Todos os três lados têm comprimentos diferentes.</li>
+                    <li>Isósceles: Dois lados têm o mesmo comprimento, enquanto o terceiro lado é diferente.
+                    </li>
+                </ul>
+            </article>
+            <form id="determineSeasonYears">
+                <h3> Determinar a estação do ano:</h3>
+                <label for="seasons">Qual mês?</label>
+                <select id="seasons">
+                    <option value="January">Janeiro</option>
+                    <option value="February">Fevereiro</option>
+                    <option value="March">Março</option>
+                    <option value="April">Abril</option>
+                    <option value="May">Maio</option>
+                    <option value="June">Junho</option>
+                    <option value="July">Julho</option>
+                    <option value="August">Agosto</option>
+                    <option value="September">Setembro</option>
+                    <option value="October">Outubro</option>
+                    <option value="November">Novembro</option>
+                    <option value="December">Dezembro</option>
+                </select>
+                <p id="seasonRes">Aqui Aparecera a Estação</p>
+                <button onclick="onClickHandleSeasons(event)">Seasons</button>
+            </form>
+            <form id="classificationOfTriangles">
+                <h3> Classificação de triângulos</h3>
+                <label for="size">Me Informe o tamanho dos 3 Lados do triangulo</label>
+                <div class="input_container_row">
+                    <input id="size1" type="number">
+                    <input id="size2" type="number">
+                    <input id="size3" type="number">
+                </div>
+                <p id="triangleType"></p>
+                <button onclick="onClickHandleType(event)">Submmit</button>
+            </form>
+        </section>
+        <section id="atv11_12">
+            <header>
+                <h2>Atividades 11 e 12</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_11 - Cálculo de média ponderada: </strong> Pergunte ao usuário suas notas em três disciplinas e os pesos correspondentes.
+                    Calcule a média ponderada e mostre o resultado. <br>
+                    Fórmula: Média ponderada = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1 + peso2 + peso3)
+                </p>
+                <p>
+                    <strong>Atv_12 - Verificação de número primo: </strong> Solicite ao usuário um número e determine se ele é um número primo.
+                    Fórmula: Verifique se o número tem apenas dois divisores (1 e ele mesmo) para ser considerado primo.
+                </p>
+           
+            </article>
+            <form id="calculcAverage">
+                <h3> Cálculo de média ponderada:</h3>
+                <label for="note">Me Informe 3 Notas e 3 Pesos?</label>
+                    <label>Notas:</label>
+                    <div class="input_container_row">
+                        <input id="n1" type="number">
+                        <input id="n2" type="number">
+                        <input id="n3" type="number">
+                    </div>
+                    <label for="">Pesos:</label>
+                    <div class="input_container_row">
+                        <input id="p1" type="number">
+                        <input id="p2" type="number">
+                        <input id="p3" type="number">
+                    </div>
+                <p id="calculcAverageRes">Aqui Aparecera o Resultado</p>
+                <button onclick="onClickHandleAverage(event)">Calcular</button>
+            </form>
+            <form id="checkPrimeNumber">
+                <h3> Verificação de número primo</h3>
+                <label for="size">Inserir Numero: </label>
+                <input id="numPrime" type="number">
+                <p id="resNum"></p>
+                <button onclick=" onClickHandleCheckNumber(event)">Submmit</button>
+            </form>
+        </section>
+        <section id="atv13_14">
+            <header>
+                <h2>Atividades 13 e 14</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_13 -Conversor de moeda: </strong>Pergunte ao usuário um número de 1 a 7 e exiba o dia da semana correspondente
+                    (1 = domingo, 2 = segunda-feira, etc.). <br>
+                    Fórmula: Nenhuma fórmula necessária. Associe os números aos dias da semana
+                </p>
+                <p>
+                    <strong>Atv_14 - Determinar o dia da semana: </strong>   Pergunte ao usuário um número de 1 a 7 e exiba o dia da semana correspondente
+                    (1 = domingo, 2 = segunda-feira, etc.).
+                </p>
+           
+            </article>
+            <form id="currencyConverter">
+                <h3> Conversor de moeda:</h3>
+                <label for="conversor">Me Informe o valor em reais e a taxa de Cambio?</label>
+                    <label>Valor em Reais:</label>
+                    <input id="real" type="number">
+                    <label>Taxa de Cambio:</label>
+                    <input id="rate" type="number">
+                <p id="currencyConverterRes">Aqui Aparecera o Resultado</p>
+                <button onclick="onClickHandleConverter(event)">Converter</button>
+            </form>
+            <form id="dayWeek">
+                <h3> Determinar o dia da semana</h3>
+                <label for="day">Inserir Numero: (de 1 a 7) </label>
+                <input id="day" type="number">
+                <p id="resWeek"></p>
+                <button onclick="onClickHandleCheckDayWeek(event)">Submmit</button>
+            </form>
+        </section>
+        <section id="atv15_16">
+            <header>
+                <h2>Atividades 15 e 16</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_15 - Verificação de voto obrigatório:</strong>: Solicite a idade do usuário e informe se ele tem idade para votar (idade igual ou
+                    superior a 18 anos). <br>
+                    Fórmula: Nenhuma fórmula necessária. Verifique se a idade é maior ou igual a 18
+                </p>
+                <p>
+                    <strong>Atv_16 - Verificação de ano bissexto: </strong>   Pergunte ao usuário um ano e determine se ele é bissexto ou não.
+                    Fórmula: Um ano é bissexto se for divisível por 4. No entanto, anos divisíveis por 100 são exceções e devem ser divisíveis por 400
+                    para serem bissextos.
+            </article>
+            <form id="votingAge">
+                <h3> Verificação de voto obrigatório:</h3>
+                <label for="voting-age">Me inform sua idade?</label>
+                    <label>Idade:</label>
+                    <input id="age" type="number">
+                <p id="votingAgeRes">Aqui Aparecera o Resultado</p>
+                <button onclick="onClickHandleVotingAge(event)">Converter</button>
+            </form>
+            <form id="leapYear">
+                <h3> Verificação de ano bissexto:</h3>
+                <label for="year">Inserir um Ano: </label>
+                <input id="year" type="number">
+                <p id="resYear"></p>
+                <button onclick="onClickHandleCheckYear(event)">Submmit</button>
+            </form>
+        </section>
+        <section id="atv17_18">
+            <header>
+                <h2>Atividades 17 e 18</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_17 - Calculadora de juros simples:</strong>: Solicite ao usuário o valor principal, a taxa de juros e o período (em meses). Calcule
+                    os juros simples e exiba o valor total. <br>
+                    Fórmula: Juros simples = Principal * Taxa de juros * Período
+                    
+                </p>
+                <p>
+                    <strong>Atv_18 - Determinar a categoria de peso em uma luta: </strong>    Peça ao usuário para informar seu peso e, em seguida, determine
+                    em qual categoria de peso ele se encaixa em uma luta (ex: peso-pena, peso-leve, peso-médio, etc.).
+                    Fórmula: Nenhuma fórmula necessária. Use uma estrutura condicional para associar os pesos às categorias.
+                    <ul>
+                        <h6>Classificação:</h6>
+                        <li>Peso-pena: até 57 kg</li>
+                        <li>Peso-leve: de 57 kg a 70 kg</li>
+                        <li>Peso-médio: de 70 kg a 84 kg</li>
+                        <li>Peso-pesado: acima de 84 kg</li>
+                    </ul>                    
+            </article>
+            <form id="calcFees">
+                <h3> Calculadora de juros simples:</h3>
+                <label for="voting-age">Me informe um Valor, taxa de Juros e Meses?</label>
+                    <label>Valor:</label>
+                    <input id="valuePrinc" type="number">
+                    <label>Taxa de Juros:</label>
+                    <input id="fees" type="number">
+                    <label>Month:</label>
+                    <input id="month" type="number">
+                <p id="calcFeesRes">Aqui Aparecera o Resultado</p>
+                <button onclick="onClickHandleCalcFees(event)">Calcular</button>
+            </form>
+            <form id="fightWeight">
+                <h3> Determinar a categoria de peso em uma luta:</h3>
+                <label for="weightUser">Informe Seu Peso: </label>
+                <input id="weightUser" type="number">
+                <p id="resFightWeight"></p>
+                <button onclick="onClickHandleFightWeight(event)">Submmit</button>
+            </form>
+        </section>
+        <section id="atv19_20">
+            <header>
+                <h2>Atividades 19 e 20</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_19 - Conversor de unidades de medida:</strong> Solicite ao usuário uma quantidade em metros e permita que ele escolha
+                    converter para centímetros, milímetros ou quilômetros. <br>
+                    Fórmula: Nenhuma fórmula necessária. Use fatores de conversão para realizar as conversões.
+                    
+                </p>
+                <ul>
+                    <h6>Classificação:</h6>
+                    <li>Para converter metros em centímetros: centimetros = metros * 100</li>
+                    <li>Para converter metros em milímetros: milimetros = metros * 1000</li>
+                    <li>Para converter metros em quilômetros: quilometros = metros / 1000</li>
+                </ul> 
+                <p>
+                    <strong>Atv_20 - Decisão de compra de produto: </strong> Pergunte ao usuário o preço de um produto e sua quantidade disponível em
+                    estoque. Se o preço for menor que R$ 50 e houver mais de 10 unidades em estoque, informe que o produto está disponível para
+                    compra; caso contrário, diga que não está disponível. <br>
+                    Fórmula: Nenhuma fórmula necessária. Verifique as condições para determinar a disponibilidade do produto                  
+            </article>
+            <form id="convertMeasures">
+                <h3> Conversor de unidades de medida:</h3>
+                <label for="voting-age">Me informe uma Quantidade em Metros, e Escolha para qual converter:</label>
+                    <label>Quantidades em Metros:</label>
+                    <input id="metros" type="number">
+                    <select id="measures">
+                        <option value="cent">Centímetros</option>
+                        <option value="mili">Milímetros</option>
+                        <option value="quilo">Quilômetros</option>
+                    </select>
+                <p id="convertMeasuresRes">Aqui Aparecera o Resultado</p>
+                <button onclick="onClickHandleConvertMeasures(event)">Calcular</button>
+            </form>
+            <form id="productPurchase">
+                <h3> Decisão de compra de produto:</h3>
+                <label for="productPrice">Informe o Preço: </label>
+                <input id="productPrice" type="number">
+                <label for="productQuant">Informe a Quantidade Disponivel: </label>
+                <input id="productQuant" type="number">
+                <p id="resProductPrice"></p>
+                <button onclick="onClickHandleProductPrice(event)">Submmit</button>
             </form>
         </section>
     </main>
+    <footer>
+        <nav>
+            <h4>Atividades</h4>
+            <ul>
+                <li><a href="#atv01_02">01|02</a></li>
+                <li><a href="#atv03_04">03|04</a></li>
+                <li><a href="#atv05_06">05|06</a></li>
+                <li><a href="#atv07_08">07|08</a></li>
+                <li><a href="#atv09_10">09|10</a></li>
+               
+            </ul>
+            <ul>
+                <li><a href="#atv11_12">11|12</a></li>
+                <li><a href="#atv13_14">13|14</a></li>
+                <li><a href="#atv15_16">15|16</a></li>
+                <li><a href="#atv17_18">17|18</a></li>
+                <li><a href="#atv19_20">19|20</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 <script src="atv01_02.js"></script>
 <script src="atv03_04.js"></script>
 <script src="atv05_06.js"></script>
 <script src="atv07_08.js"></script>
+<script src="atv09_10.js"></script>
+<script src="atv11_12.js"></script>
+<script src="atv13_14.js"></script>
+<script src="atv15_16.js"></script>
+<script src="atv17_18.js"></script>
+<script src="atv19_20.js"></script>
 </html>

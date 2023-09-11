@@ -7,13 +7,13 @@ body {
     background-color: rgb(56, 15, 15);
     display: flex;
     flex-direction: column;
+    width: 100%;
     
 }
 #top-bar {
     display: flex;
     background-color: rgb(249, 227, 227);
     height: 18vh;
-    gap: 200px;
     font: 500 1.5rem arial;
     align-items: center;
     justify-content: space-around;
@@ -24,6 +24,50 @@ body {
     box-shadow: inset 5px 10px 10px rgb(192, 79, 79);
 
 }
+#intro{
+    max-width: 500px;
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    background-color: rgb(56, 15, 15);
+    text-align: center;
+    border-radius: 0px 0px 50px 50px ;
+    padding: 30px;
+    box-shadow: 3px 10px 5px rgba(0, 0, 0, 0.331);
+    box-shadow: inset 1px 10px 10px rgb(11, 1, 1);
+}
+nav > h4 {
+    background-color: rgb(249, 227, 227);
+    color: rgb(56, 15, 15);
+}
+nav > ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav > ul > li{
+    gap: 50px;
+    text-decoration: none;
+    color: rgb(29, 3, 3);
+  
+}
+nav > ul > li:hover{
+    cursor: pointer;
+    color: rgb(176, 80, 80);
+}
+a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
 main{
     background-color: rgb(195, 157, 157);
     display: flex;
@@ -32,14 +76,7 @@ main{
     align-items: center;
   
 }
-#atv01_02{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 100vh;
-}
+
 p{
     font: 300 1.5rem black;
     padding: 50px;
@@ -109,30 +146,6 @@ tr:nth-child(odd) {
     color: rgb(221, 225, 246);
 }
 
-nav{
-    max-width: 800px;
-    width: 100%;
-    text-align: center;
-}
-nav > ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
-nav > ul > li{
-    gap: 50px;
-    text-decoration: none;
-    color: rgb(29, 3, 3);
-  
-}
-nav > ul > li:hover{
-    cursor: pointer;
-    color: rgb(176, 80, 80);
-}
-a{
-    text-decoration: none;
-}
 
 article{
     max-width: 1500px;
@@ -148,17 +161,7 @@ h3 {
 }
 
 
-#atv03_04{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 100vh;
-    margin-bottom: 105px;
-    
 
-}
 form{
     background-color: #d84848a6;
     display: flex;
@@ -168,6 +171,8 @@ form{
     align-items: center;
     text-align: center;
     border-radius: 30px;
+    padding: 54px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.457);
 }
 
 form input{
@@ -268,21 +273,8 @@ header{
 
 
 }
-#atv05_06{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-#atv07_08{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 #convert{
     display: flex;
     margin: 20px;
@@ -293,4 +285,43 @@ header{
     width: 140px;
     height: 50px;
     border: none;
+}
+
+#atv09_10{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px;
+}
+
+.input_container_row{
+    display: flex;
+    flex-direction: row;
+}
+.input_container_row input {
+    width: 200px;
+}
+
+section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 20px;
+
+}
+
+select {
+    
+    margin: 30px;
+    font: 500 1.2rem arial;
+    color: rgb(224, 214, 214);
+    width: 300px;
+    padding: 2px;
+    background-color: rgb(33, 11, 11);
 }
