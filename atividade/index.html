@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade Avalidade</title>
+</head>
+<body>
+    <header id="top-bar">
+        <div>
+            <h1>Ola Mundo!!</h1>
+            <p>Me chamo Hevellyn, R.A: 14505.
+                <br>Essas são as atividades propostas pelo
+                <br>
+                <strong>Prof: Aleandro</strong>
+            </p>
+        </div>
+        <nav>
+            <h4>Atividades</h4>
+            <ul>
+                <li><a href="#atv01_02">01|02</a></li>
+                <li><a href="#atv03_04">03|04</a></li>
+                <li><a href="#atv05_06">05|06</a></li>
+                <li><a href="">07|08</a></li>
+                <li><a href="">09|10</a></li>
+                <li><a href="">11|12</a></li>
+                <li><a href="">13|14</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="atv01_02">
+            <header>
+                <h2>Atividades 01 e 02</h2>
+            </header>
+            <article>
+                <p><strong>Atv_01: </strong>Verificação de idade: Peça ao usuário para digitar sua idade e exiba uma mensagem informando se ele é maior ou
+                    menor de idade</p>
+                <p><strong>Atv_02: </strong>Aprovação em exame: Solicite ao usuário sua nota em um exame e determine se ele foi aprovado (nota maior ou
+                    igual a 7) ou reprovado</p>
+            </article>
+            <p class="user-data"></p>
+            <div class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aluno:</th>
+                            <th>Idade:</th>
+                            <th>Situação:</th>
+                            <th>-----------</th>
+                        </tr>
+                    </thead>
+                <tbody>
+            
+                </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="atv03_04">
+            <header>
+                <h2>Atividades 03 e 04</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_03:</strong> Verificação de número par ou ímpar: Peça ao usuário para digitar um número e informe se ele é par ou ímpar.
+                    Fórmula: Use o operador de módulo (%) para verificar se o número é divisível por 2. Se o resultado for 0, é par; caso contrário, é
+                    ímpar.
+                </p>
+                <p>
+                    <strong>Atv_04:</strong> Cálculo de IMC: Solicite ao usuário seu peso (em kg) e altura (em metros) e calcule o Índice de Massa Corporal
+                    (IMC), exibindo uma mensagem com a classificação (ex: abaixo do peso, normal, acima do peso).
+                </p>
+            </article>
+                    <!-- Mudei um pouco a questão irei verificar se o resultado do IMC é par ou impar, espero que não tenha problemas -->
+            <form>
+                <h3>Calcula IMC</h3>
+                <label for="">Qual sua altura?</label>
+                <input step="0.01" class="height" type="number" placeholder="Qual sua altura?">
+                <label for="">Qual seu peso?</label>
+                <input step="0.01" class="weight" type="number" placeholder="Qual seu peso?">
+                <div>
+                    <p class="res"></p>
+                    <p class="rest"></p>
+                </div>
+                <button onclick="calculateIMC(event)">Calcular IMC</button>
+            </form>
+        </section>
+        <section id="atv05_06">
+            <header>
+                <h2>Atividades 05 e 06</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_05:</strong> Pergunte ao usuário o valor de um produto e o desconto aplicado (em porcentagem).
+                    Calcule o preço com desconto e mostre o resultado. <br>
+                    Fórmula: Preço com desconto = preço original - (preço original * (desconto / 100))
+                </p>
+                <p>
+                    <strong>Atv_06:</strong>  Peça ao usuário para inserir três números e determine qual deles é o maior.
+                    Fórmula: Nenhuma fórmula necessária. Compare os números para encontrar o maior.
+                </p>
+            </article>
+            <form>
+                <h3>Calcula De Desconto</h3>
+                <label for="">Valor Do Produto?</label>
+                <input step="0.01" class="valueProduct" type="number" placeholder="Valor Do Produto?">
+                <label for="">Desconto Aplicado em %?</label>
+                <input step="0.01" class="desc" type="number" placeholder="Desconto Aplicado em %?">
+                <p class="value">Aqui aparece o valor com desconto</p>
+                <button onclick="calculateDesc(event)">Calcular Desconto</button>
+            </form>
+            <div id="atv06">
+                <h3>Qual Valor é Maior</h3>
+                <input type="number" class="requestNum">
+                <button class="btn" onclick="handleClickShowBigger(event)">Inserir Numero?</button>
+                <ul class="list_tree_number"></ul>
+                <p class="res_tree">Maior entre esses 3 Numeros Aparece aqui</p>
+            </div>
+        </section>
+        <section id="atv07_08">
+            <header>
+                <h2>Atividades 07 e 08</h2>
+            </header>
+
+            <article>
+                <p>
+                    <strong>Atv_07:</strong> Conversor de temperatura: Peça ao usuário para escolher entre converter de Celsius para Fahrenheit ou de
+                    Fahrenheit para Celsius e realize a conversão. <br>
+                    Fórmula (Celsius para Fahrenheit): Fahrenheit = (Celsius * 9/5) + 32
+                    <br>
+                    Fórmula (Fahrenheit para Celsius): Celsius = (Fahrenheit - 32) * 5/9
+                </p>
+                <p>
+                    <strong>Atv_08:</strong>   Solicite um nome de usuário e senha ao usuário. Se o nome de usuário for "admin" e a senha
+                    for "senha123", exiba uma mensagem de login bem-sucedido; caso contrário, mostre uma mensagem de erro.
+                    Fórmula: Nenhuma fórmula necessária. Compare os valores inseridos pelo usuário com os valores esperados.
+                </p>
+            </article>
+            <form id="converterForm">
+                <label for="conversionDirection">Escolha a conversão:</label>
+                <select id="conversionDirection">
+                    <option value="celsiusToFahrenheit">Celsius para Fahrenheit</option>
+                    <option value="fahrenheitToCelsius">Fahrenheit para Celsius</option>
+                </select>
+                <br>
+                <label for="temperature">Digite a temperatura:</label>
+                <input type="number" id="temperature" required>
+                <br>
+                <button type="button" onclick="convertTemp()">Converter</button>
+            </form>
+            <p id="resultado"></p>
+            <form>
+                <h3>Validação de login</h3>
+                <label for="">Valor Do Produto?</label>
+                <input step="0.01" class="valueProduct" type="number" placeholder="Valor Do Produto?">
+                <label for="">Desconto Aplicado em %?</label>
+                <input step="0.01" class="desc" type="number" placeholder="Desconto Aplicado em %?">
+                <p class="value">Aqui aparece o valor com desconto</p>
+                <button onclick="calculateDesc(event)">Calcular Desconto</button>
+            </form>
+        </section>
+    </main>
+</body>
+<script src="atv01_02.js"></script>
+<script src="atv03_04.js"></script>
+<script src="atv05_06.js"></script>
+<script src="atv07_08.js"></script>
+</html>
